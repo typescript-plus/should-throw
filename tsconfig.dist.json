@@ -3,8 +3,7 @@
   "extends": "./node_modules/@myowncake/config-typescript/dist/tsconfig.es5.general.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src",
-    "removeComments": true
+    "rootDir": "src"
   },
   "include": [
     "src/*.ts",

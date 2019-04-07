@@ -16,8 +16,9 @@
     "dist:clean": "rm -rf dist",
     "doc": "typedoc --mode file --excludeNotExported --out docs/api src",
     "lint": "tslint -p . -t verbose",
-    "test": "ts-node node_modules/jasmine/bin/jasmine 'spec/**/*.spec.ts'",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "test": "npm run testx -- 'spec/**/*.spec.ts'",
+    "testx": "ts-node node_modules/jasmine/bin/jasmine"
   },
   "dependencies": {
     "@typescript-plus/builtin-class-decorator": "^0.2.0"
