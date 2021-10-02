@@ -1,9 +1,9 @@
-import { BuiltinClass } from '@typescript-plus/builtin-class-decorator';
-import { ErrorClassType, NotThrownError, shouldThrow } from '../../../src';
+import { Es5BuiltinClass } from '@typescript-plus/builtin-class-decorator';
+import { ErrorClassType, shouldThrow } from '../../../src';
 
 const RESULT = {};
 
-@BuiltinClass()
+@Es5BuiltinClass()
 class CustomError extends Error {}
 
 async function expectToReturnCallbackResult<T extends Error>(
@@ -13,9 +13,11 @@ async function expectToReturnCallbackResult<T extends Error>(
   expect(
     await shouldThrow(
       type,
+      // eslint-disable-next-line @typescript-eslint/require-await
       async () => {
         throw thrown;
       },
+      // eslint-disable-next-line @typescript-eslint/require-await
       async () => RESULT
     )
   ).toBe(RESULT);

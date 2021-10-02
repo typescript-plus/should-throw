@@ -1,7 +1,7 @@
 import { ErrorClassType } from '../classes/ErrorClassType';
 import { NotThrownError } from '../classes/NotThrownError';
 
-export function shouldThrowSync<E extends Error, C extends ErrorClassType<E> | undefined, T>(
+export function shouldThrowSync<E extends Error, C extends ErrorClassType<E> | undefined>(
   type: C | undefined,
   thrower: () => void
 ): void;
@@ -18,7 +18,7 @@ export function shouldThrowSync<E extends Error, C extends ErrorClassType<E> | u
   try {
     thrower();
   } catch (err) {
-    // tslint:disable-next-line:ban-types
+    // eslint-disable-next-line @typescript-eslint/ban-types
     if (type !== undefined && !(err instanceof (type as Function))) {
       throw new NotThrownError(type, err);
     }

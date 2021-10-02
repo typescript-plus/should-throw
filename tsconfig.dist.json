@@ -1,6 +1,6 @@
 {
   "$schema": "https://schemastore.azurewebsites.net/schemas/json/tsconfig.json",
-  "extends": "./node_modules/@myowncake/config-typescript/dist/tsconfig.es5.general.json",
+  "extends": "./node_modules/@myowncake/config-typescript/dist/tsconfig.general.json",
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src"

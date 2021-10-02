@@ -1,7 +1,7 @@
-import { BuiltinClass } from '@typescript-plus/builtin-class-decorator';
+import { Es5BuiltinClass } from '@typescript-plus/builtin-class-decorator';
 import { ErrorClassType, shouldThrowSync } from '../../../src';
 
-@BuiltinClass()
+@Es5BuiltinClass()
 class CustomError extends Error {}
 
 function expectToPassErrorObject<T extends Error>(type: ErrorClassType<T> | undefined) {

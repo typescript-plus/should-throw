@@ -1,11 +1,11 @@
-import { BuiltinClass } from '@typescript-plus/builtin-class-decorator';
+import { Es5BuiltinClass } from '@typescript-plus/builtin-class-decorator';
 import { ErrorClassType, NotThrownError, shouldThrowSync } from '../../../src';
 
-@BuiltinClass()
+@Es5BuiltinClass()
 class CustomError extends Error {}
 
 // tslint:disable-next-line:max-classes-per-file
-@BuiltinClass()
+@Es5BuiltinClass()
 class AnotherError extends Error {}
 
 function expectToThrowNotThrown<T extends Error>(type: ErrorClassType<T> | undefined, thrower: () => void) {
@@ -16,12 +16,12 @@ function expectToThrowNotThrown<T extends Error>(type: ErrorClassType<T> | undef
 
 describe(__filename, () => {
   it('when not thrown with type', () => {
-    // tslint:disable-next-line:no-empty
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     expectToThrowNotThrown(CustomError, () => {});
   });
 
   it('when not thrown without type', () => {
-    // tslint:disable-next-line:no-empty
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     expectToThrowNotThrown(undefined, () => {});
   });
 

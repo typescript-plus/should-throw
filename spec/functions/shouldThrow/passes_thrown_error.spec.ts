@@ -1,7 +1,7 @@
-import { BuiltinClass } from '@typescript-plus/builtin-class-decorator';
+import { Es5BuiltinClass } from '@typescript-plus/builtin-class-decorator';
 import { ErrorClassType, shouldThrow } from '../../../src';
 
-@BuiltinClass()
+@Es5BuiltinClass()
 class CustomError extends Error {}
 
 async function expectToPassErrorObject<T extends Error>(type: ErrorClassType<T> | undefined) {
@@ -9,9 +9,11 @@ async function expectToPassErrorObject<T extends Error>(type: ErrorClassType<T> 
   let passed: CustomError | undefined;
   await shouldThrow(
     type,
+    // eslint-disable-next-line @typescript-eslint/require-await
     async () => {
       throw customError;
     },
+    // eslint-disable-next-line @typescript-eslint/require-await
     async (error: CustomError) => {
       passed = error;
     }

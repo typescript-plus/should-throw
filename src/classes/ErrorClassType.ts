@@ -1,2 +1,2 @@
-// tslint:disable-next-line:interface-over-type-literal
-export type ErrorClassType<T extends Error> = { new (...args: any[]): T };
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type ErrorClassType<T extends Error> = new (...args: any[]) => T;

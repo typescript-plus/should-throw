@@ -1,9 +1,9 @@
-import { BuiltinClass } from '@typescript-plus/builtin-class-decorator';
+import { Es5BuiltinClass } from '@typescript-plus/builtin-class-decorator';
 import { ErrorClassType, shouldThrowSync } from '../../../src';
 
 const RESULT = {};
 
-@BuiltinClass()
+@Es5BuiltinClass()
 class CustomError extends Error {}
 
 function expectToReturnCallbackResult<T extends Error>(type: ErrorClassType<T> | undefined, thrown: T | undefined) {
