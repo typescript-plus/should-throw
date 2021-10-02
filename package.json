@@ -2,7 +2,7 @@
   "name": "@typescript-plus/should-throw",
   "version": "0.4.0",
   "description": "A TypeScript library for testing if errors are thrown.",
-  "repository": "typescript-plus/stream-capture",
+  "repository": "typescript-plus/should-throw",
   "license": "MIT",
   "author": "mosop",
   "files": [
